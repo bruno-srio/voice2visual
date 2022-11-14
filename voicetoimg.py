@@ -98,10 +98,11 @@ with torch.autocast('cuda'):
     image = pipe(prompt)['sample'][0]
 
 # Check the result:
-# Use streamlit to show the image
-st.image(image, caption='Generated image', use_column_width=True)
 plt.imshow(image)
 plt.title(prompt)
 plt.axis('off')
 plt.savefig('result.jpg')
 plt.show()
+
+# Use streamlit to show the image
+st.image(image, caption='Generated image', use_column_width=True)
